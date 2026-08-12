@@ -7,7 +7,7 @@ This repository provides reference implementations and best practices for crypto
 ### Recent Updates
 - **ADR Gatekeeper**: Installed a new governance system to ensure all significant architectural decisions are documented via Architectural Decision Records (ADRs).
 - **Skill Relocation**: Optimized the agent's skill set by moving all specialized procedures to the root `skills/` directory.
-- **Language Demo**: Added a PowerShell script (`demo_langs.ps1`) to demonstrate the environment's Python and Java capabilities.
+- **Language Demo**: Added bash (`demo_langs.sh`) and PowerShell (`demo_langs.ps1`) scripts to demonstrate the environment's Python and Java capabilities.
 
 ## Directory Structure
 - `ADRs/`: Architectural Decision Records.
