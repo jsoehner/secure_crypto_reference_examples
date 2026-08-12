@@ -7,7 +7,7 @@ This repository provides reference implementations and best practices for crypto
 ### Recent Updates
 - **ADR Gatekeeper**: Installed a new governance system to ensure all significant architectural decisions are documented via Architectural Decision Records (ADRs).
 - **Skill Relocation**: Optimized the agent's skill set by moving all specialized procedures to the root `skills/` directory.
-- **Security Audit**: Conducted a comprehensive security audit using the `piolium` suite, identifying key areas for dependency updates and implementation hardening.
+- **Language Demo**: Added a bash script (`demo_langs.sh`) to demonstrate the environment's Python and Java capabilities.
 
 ## Directory Structure
 - `ADRs/`: Architectural Decision Records.
