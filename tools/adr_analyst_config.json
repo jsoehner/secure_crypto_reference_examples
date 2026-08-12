@@ -1,0 +1,13 @@
+{
+  "significance_rules": [
+    "Any change to cryptographic primitives or algorithms",
+    "Any change to authentication, authorization, or session management",
+    "Any change to data persistence or schema architecture",
+    "Any change to third-party integrations or external APIs",
+    "Any change to infrastructure, deployment, or scaling strategy",
+    "Any change to security protocols or compliance requirements"
+  ],
+  "gatekeeper_mode": "strict",
+  "require_rationale": true,
+  "auto_reject_on_missing_adr": true
+}

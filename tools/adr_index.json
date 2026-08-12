@@ -1,0 +1,44 @@
+{
+  "adr_index": [
+    {
+      "id": "001",
+      "title": "Cryptographic Standards",
+      "file": "ADRs/001-cryptographic-standards.md"
+    },
+    {
+      "id": "002",
+      "title": "Authenticated Encryption AES-GCM",
+      "file": "ADRs/002-authenticated-encryption-aes-gcm.md"
+    },
+    {
+      "id": "003",
+      "title": "Password Hashing PBKDF2",
+      "file": "ADRs/003-password-hashing-pbkdf2.md"
+    },
+    {
+      "id": "004",
+      "title": "Key Agreement X25519-HKDF",
+      "file": "ADRs/004-key-agreement-x25519-hkdf.md"
+    },
+    {
+      "id": "005",
+      "title": "Asymmetric Cryptography RSA-OAEP-PSS",
+      "file": "ADRs/005-asymmetric-cryptography-rsa-oaep-pss.md"
+    },
+    {
+      "id": "006",
+      "title": "Digital Signatures Ed25519",
+      "file": "ADRs/006-digital-signatures-ed25519.md"
+    },
+    {
+      "id": "007",
+      "title": "Message Authentication HMAC",
+      "file": "ADRs/007-message-authentication-hmac.md"
+    },
+    {
+      "id": "008",
+      "title": "Key Wrapping and Serialization",
+      "file": "ADRs/008-key-wrapping-and-serialization.md"
+    }
+  ]
+}
