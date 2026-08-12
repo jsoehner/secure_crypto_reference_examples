@@ -5,9 +5,7 @@ This repository provides reference implementations and best practices for crypto
 ## Project Status
 
 ### Recent Updates
-- **ADR Gatekeeper**: Installed a new governance system to ensure all significant architectural decisions are documented via Architectural Decision Records (ADRs).
-- **Skill Relocation**: Optimized the agent's skill set by moving all specialized procedures to the root `skills/` directory.
-- **Language Demo Fix**: Corrected `demo_langs.ps1` by removing the invalid `-ErrorAction` flag from the `javac` command, ensuring proper compilation and execution of Java examples.
+- **Python Dependencies**: Installed the `cryptography` library to support the Python reference examples.\n- **Java Path Resolution**: Updated `java/run_all.sh` to use absolute paths relative to the script location, ensuring consistent execution regardless of the working directory.\n- **Language Demo Fix**: Corrected `demo_langs.ps1` by removing the invalid `-ErrorAction` flag from the `javac` command, ensuring proper compilation and execution of Java examples.
 
 ## How to Run Demos
 
