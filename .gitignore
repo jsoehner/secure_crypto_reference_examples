@@ -2,3 +2,6 @@ out/
 __pycache__/
 .DS_Store
 *.class
+piolium/*
+!piolium/final-audit-report.md
+!piolium/findings/
