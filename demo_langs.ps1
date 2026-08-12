@@ -35,7 +35,8 @@ public class HelloWorld {
     $JAVA_CONTENT | Out-File -FilePath $JAVA_FILE -Encoding utf8
 
     # Compile and Run
-    if (javac $JAVA_FILE -ErrorAction SilentlyContinue) {
+    javac $JAVA_FILE
+    if ($LASTEXITCODE -eq 0) {
         java HelloWorld
         Remove-Item $JAVA_FILE
         Remove-Item HelloWorld.class
