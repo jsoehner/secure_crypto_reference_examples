@@ -1,6 +1,6 @@
 # Secure Crypto Reference Examples
 
-This repository provides reference implementations and best practices for cryptographic operations in Python and Java.
+This repository provides reference implementations and best practices for cryptographic operations in Python, Java, and PowerShell.
 
 ## Project Status
 
@@ -13,6 +13,7 @@ This repository provides reference implementations and best practices for crypto
 - `ADRs/`: Architectural Decision Records.
 - `java/`: Java cryptographic implementations.
 - `python/`: Python cryptographic implementations.
+- `powershell/`: PowerShell cryptographic implementations.
 - `scripts/`: Project utilities and gatekeeper tools.
 - `tools/`: Configuration and metadata for the ADR Gatekeeper.
 - `piolium/`: Security audit artifacts (partial).
