@@ -9,11 +9,51 @@ This repository provides reference implementations and best practices for crypto
 - **Skill Relocation**: Optimized the agent's skill set by moving all specialized procedures to the root `skills/` directory.
 - **Language Demo Fix**: Corrected `demo_langs.ps1` by removing the invalid `-ErrorAction` flag from the `javac` command, ensuring proper compilation and execution of Java examples.
 
-## Directory Structure
-- `ADRs/`: Architectural Decision Records.
-- `java/`: Java cryptographic implementations.
-- `python/`: Python cryptographic implementations.
-- `powershell/`: PowerShell cryptographic implementations.
-- `scripts/`: Project utilities and gatekeeper tools.
-- `tools/`: Configuration and metadata for the ADR Gatekeeper.
-- `piolium/`: Security audit artifacts (partial).
+## How to Run Demos
+
+You can run the full suite of secure code examples for Python and Java using the provided scripts.
+
+### Bash
+```bash
+./demo_langs.sh
+```
+
+### PowerShell
+```powershell
+.\demo_langs.ps1
+```
+
+The scripts will prompt you to choose which language(s) you want to demonstrate (python, java, or both).
+
+## Secure Code Examples
+
+Below is a snippet of the AES-256-GCM authenticated encryption example in both Python and Java.
+
+### Python Example (`python/aes_gcm_example.py`)
+```python
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from crypto_support import random_bytes
+
+def encrypt(key: bytes, plaintext: bytes, aad: bytes | None) -> Envelope:
+    nonce = random_bytes(12)
+    return Envelope(nonce, AESGCM(key).encrypt(nonce, plaintext, aad))
+```
+
+### Java Example (`java/src/main/java/org/example/crypto/AesGcmExample.java`)
+```java
+import javax.crypto.Cipher;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
+public class AesGcmExample {
+    public static byte[] encrypt(byte[] key, byte[] plaintext, byte[] aad) throws Exception {
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        byte[] nonce = new byte[12];
+        new SecureRandom().nextBytes(nonce);
+        GCMParameterSpec spec = new GCMParameterSpec(128, nonce);
+        cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"), spec);
+        cipher.updateAAD(aad);
+        return cipher.doFinal(plaintext);
+    }
+}
+```

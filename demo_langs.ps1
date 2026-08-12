@@ -7,46 +7,55 @@ Write-Host "${BLUE}==========================================${NC}"
 Write-Host "      Language Demonstration Script"
 Write-Host "${BLUE}==========================================${NC}"
 
-# --- Python Demonstration ---
-Write-Host "`n${GREEN}[1] Demonstrating Python...${NC}"
-if (Get-Command python3 -ErrorAction SilentlyContinue) {
-    python3 -c "
-import sys
-print(f'Hello from Python {sys.version.split()[0]}!')
-print('Simple math: 2^10 =', 2**10)
-"
-} else {
-    Write-Host "Python 3 is not installed."
-}
+$choice = Read-Host "Which language(s) would you like to demonstrate? (python, java, both)"
 
-# --- Java Demonstration ---
-Write-Host "`n${GREEN}[2] Demonstrating Java...${NC}"
-if (Get-Command java -ErrorAction SilentlyContinue) {
-    # Create a temporary Java file
-    $JAVA_FILE = "HelloWorld.java"
-    $JAVA_CONTENT = @"
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello from Java!");
-        System.out.println("Simple math: 2^10 = " + Math.pow(2, 10));
+switch ($choice.ToLower()) {
+    "python" {
+        Write-Host "`n${GREEN}[1] Demonstrating Python secure code examples...${NC}"
+        if (Get-Command python3 -ErrorAction SilentlyContinue) {
+            python3 python/run_all.py
+        } elseif (Get-Command python -ErrorAction SilentlyContinue) {
+            python python/run_all.py
+        } else {
+            Write-Host "Python is not installed."
+        }
     }
-}
-"@
-    $JAVA_CONTENT | Out-File -FilePath $JAVA_FILE -Encoding utf8
+    "java" {
+        Write-Host "`n${GREEN}[1] Demonstrating Java secure code examples...${NC}"
+        if (Get-Command java -ErrorAction SilentlyContinue) {
+            if (Get-Command bash -ErrorAction SilentlyContinue) {
+                bash java/run_all.sh
+            } else {
+                Write-Host "Bash is not installed to run the Java demo script."
+            }
+        } else {
+            Write-Host "Java is not installed."
+        }
+    }
+    "both" {
+        Write-Host "`n${GREEN}[1] Demonstrating Python secure code examples...${NC}"
+        if (Get-Command python3 -ErrorAction SilentlyContinue) {
+            python3 python/run_all.py
+        } elseif (Get-Command python -ErrorAction SilentlyContinue) {
+            python python/run_all.py
+        } else {
+            Write-Host "Python is not installed."
+        }
 
-    # Compile and Run
-    javac $JAVA_FILE
-    if ($LASTEXITCODE -eq 0) {
-        java HelloWorld
-        Remove-Item $JAVA_FILE
-        Remove-Item HelloWorld.class
-    } else {
-        Write-Host "Failed to compile Java code."
-        if (Test-Path $JAVA_FILE) { Remove-Item $JAVA_FILE }
-        if (Test-Path HelloWorld.class) { Remove-Item HelloWorld.class }
+        Write-Host "`n${GREEN}[2] Demonstrating Java secure code examples...${NC}"
+        if (Get-Command java -ErrorAction SilentlyContinue) {
+            if (Get-Command bash -ErrorAction SilentlyContinue) {
+                bash java/run_all.sh
+            } else {
+                Write-Host "Bash is not installed to run the Java demo script."
+            }
+        } else {
+            Write-Host "Java is not installed."
+        }
     }
-} else {
-    Write-Host "Java is not installed."
+    Default {
+        Write-Host "Invalid choice. Please run the script again and choose python, java, or both."
+    }
 }
 
 Write-Host "`n${BLUE}==========================================${NC}"
