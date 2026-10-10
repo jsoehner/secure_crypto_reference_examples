@@ -1,0 +1,437 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:auto-generated-cbom",
+  "version": 1,
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "name": "AES-256-GCM",
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "java/src/main/java/org/example/crypto/AesGcmExample.java:21",
+            "snippet": "KeyGenerator generator = KeyGenerator.getInstance(\"AES\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesGcmExample.java:28",
+            "snippet": "Cipher cipher = Cipher.getInstance(\"AES/GCM/NoPadding\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesGcmExample.java:38",
+            "snippet": "Cipher cipher = Cipher.getInstance(\"AES/GCM/NoPadding\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesGcmExample.java:49",
+            "snippet": "CryptoSupport.require(Arrays.equals(plaintext, decrypt(key, envelope, aad)), \"AES-GCM round trip failed\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesKeyWrapExample.java:13",
+            "snippet": "KeyGenerator generator = KeyGenerator.getInstance(\"AES\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesKeyWrapExample.java:27",
+            "snippet": "return (SecretKey) cipher.unwrap(wrapped, \"AES\", Cipher.SECRET_KEY);"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/AesKeyWrapExample.java:35",
+            "snippet": "CryptoSupport.require(Arrays.equals(contentKey.getEncoded(), recovered.getEncoded()), \"AES key wrap failed\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/X25519HkdfExample.java:62",
+            "snippet": "byte[] info = \"app-v1 aes-gcm key\".getBytes(StandardCharsets.UTF_8);"
+          },
+          {
+            "location": "python/aes_gcm_example.py:1",
+            "snippet": "\"\"\"AES-256-GCM authenticated encryption with a fresh 96-bit nonce and AAD.\"\"\""
+          },
+          {
+            "location": "python/aes_gcm_example.py:5",
+            "snippet": "from cryptography.hazmat.primitives.ciphers.aead import AESGCM"
+          },
+          {
+            "location": "python/aes_gcm_example.py:17",
+            "snippet": "return AESGCM.generate_key(bit_length=256)"
+          },
+          {
+            "location": "python/aes_gcm_example.py:22",
+            "snippet": "return Envelope(nonce, AESGCM(key).encrypt(nonce, plaintext, aad))"
+          },
+          {
+            "location": "python/aes_gcm_example.py:26",
+            "snippet": "return AESGCM(key).decrypt(envelope.nonce, envelope.ciphertext_and_tag, aad)"
+          },
+          {
+            "location": "python/aes_key_wrap_example.py:1",
+            "snippet": "\"\"\"AES key wrap with padding for protecting key material under a KEK.\"\"\""
+          },
+          {
+            "location": "python/run_all.py:3",
+            "snippet": "from aes_gcm_example import main as aes_gcm"
+          },
+          {
+            "location": "python/run_all.py:15",
+            "snippet": "for example in (hashing, hmac, pbkdf2, aes_gcm, rsa, ed25519, x25519, aes_key_wrap, private_key_serialisation):"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:27",
+            "snippet": "info = b\"app-v1 aes-gcm key\""
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "name": "Ed25519",
+          "primitive": "signature",
+          "parameterSetIdentifier": "25519",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "java/src/main/java/org/example/crypto/Ed25519Example.java:10",
+            "snippet": "return KeyPairGenerator.getInstance(\"Ed25519\").generateKeyPair();"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/Ed25519Example.java:14",
+            "snippet": "Signature signature = Signature.getInstance(\"Ed25519\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/Ed25519Example.java:21",
+            "snippet": "Signature signature = Signature.getInstance(\"Ed25519\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/Ed25519Example.java:31",
+            "snippet": "CryptoSupport.require(verify(keys.getPublic(), message, signature), \"Ed25519 failed\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/TestCrypto.java:43",
+            "snippet": "byte[] edMsg = \"ed25519 message\".getBytes(StandardCharsets.UTF_8);"
+          },
+          {
+            "location": "python/ed25519_example.py:1",
+            "snippet": "\"\"\"Ed25519 signing and verification.\"\"\""
+          },
+          {
+            "location": "python/ed25519_example.py:4",
+            "snippet": "from cryptography.hazmat.primitives.asymmetric import ed25519"
+          },
+          {
+            "location": "python/ed25519_example.py:7",
+            "snippet": "def sign(private_key: ed25519.Ed25519PrivateKey, message: bytes) -> bytes:"
+          },
+          {
+            "location": "python/ed25519_example.py:11",
+            "snippet": "def verify(public_key: ed25519.Ed25519PublicKey, message: bytes, signature: bytes) -> bool:"
+          },
+          {
+            "location": "python/ed25519_example.py:20",
+            "snippet": "private_key = ed25519.Ed25519PrivateKey.generate()"
+          },
+          {
+            "location": "python/private_key_serialisation_example.py:4",
+            "snippet": "from cryptography.hazmat.primitives.asymmetric import ed25519"
+          },
+          {
+            "location": "python/private_key_serialisation_example.py:7",
+            "snippet": "def serialise_encrypted(private_key: ed25519.Ed25519PrivateKey, password: bytes) -> bytes:"
+          },
+          {
+            "location": "python/private_key_serialisation_example.py:15",
+            "snippet": "def load_encrypted(pem: bytes, password: bytes) -> ed25519.Ed25519PrivateKey:"
+          },
+          {
+            "location": "python/private_key_serialisation_example.py:17",
+            "snippet": "if not isinstance(key, ed25519.Ed25519PrivateKey):"
+          },
+          {
+            "location": "python/private_key_serialisation_example.py:24",
+            "snippet": "original = ed25519.Ed25519PrivateKey.generate()"
+          },
+          {
+            "location": "python/run_all.py:5",
+            "snippet": "from ed25519_example import main as ed25519"
+          },
+          {
+            "location": "python/run_all.py:15",
+            "snippet": "for example in (hashing, hmac, pbkdf2, aes_gcm, rsa, ed25519, x25519, aes_key_wrap, private_key_serialisation):"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "name": "SHA-256",
+          "primitive": "hash",
+          "parameterSetIdentifier": "256",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "java/src/main/java/org/example/crypto/HashingExample.java:9",
+            "snippet": "public static byte[] sha256(byte[] data) throws Exception {"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/HashingExample.java:10",
+            "snippet": "return MessageDigest.getInstance(\"SHA-256\").digest(data);"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/HashingExample.java:14",
+            "snippet": "byte[] digest = sha256(\"secure coding reference\".getBytes(StandardCharsets.UTF_8));"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/HashingExample.java:15",
+            "snippet": "System.out.println(\"HashingExample SHA-256=\" + CryptoSupport.hex(digest));"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:22",
+            "snippet": "return new OAEPParameterSpec(\"SHA-256\", \"MGF1\", MGF1ParameterSpec.SHA256, PSource.PSpecified.DEFAULT);"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:38",
+            "snippet": "return new PSSParameterSpec(\"SHA-256\", \"MGF1\", MGF1ParameterSpec.SHA256, 32, 1);"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/TestCrypto.java:10",
+            "snippet": "byte[] digest = HashingExample.sha256(\"test data\".getBytes(StandardCharsets.UTF_8));"
+          },
+          {
+            "location": "python/hashing_example.py:1",
+            "snippet": "\"\"\"SHA-256 hashing example. Hashes are not password storage or message authentication.\"\"\""
+          },
+          {
+            "location": "python/hashing_example.py:6",
+            "snippet": "def sha256(data: bytes) -> bytes:"
+          },
+          {
+            "location": "python/hashing_example.py:7",
+            "snippet": "digest = hashes.Hash(hashes.SHA256())"
+          },
+          {
+            "location": "python/hmac_example.py:1",
+            "snippet": "\"\"\"HMAC-SHA-256 with a random 256-bit secret and constant-time verification.\"\"\""
+          },
+          {
+            "location": "python/hmac_example.py:10",
+            "snippet": "signer = hmac.HMAC(key, hashes.SHA256())"
+          },
+          {
+            "location": "python/hmac_example.py:16",
+            "snippet": "verifier = hmac.HMAC(key, hashes.SHA256())"
+          },
+          {
+            "location": "python/pbkdf2_example.py:1",
+            "snippet": "\"\"\"PBKDF2-HMAC-SHA-256 password verification with stored salt and work factor.\"\"\""
+          },
+          {
+            "location": "python/pbkdf2_example.py:22",
+            "snippet": "algorithm=hashes.SHA256(),"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:1",
+            "snippet": "\"\"\"RSA-3072 OAEP encryption and RSA-PSS signatures using SHA-256.\"\"\""
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:14",
+            "snippet": "mgf=padding.MGF1(hashes.SHA256()),"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:15",
+            "snippet": "algorithm=hashes.SHA256(),"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:22",
+            "snippet": "mgf=padding.MGF1(hashes.SHA256()),"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:23",
+            "snippet": "salt_length=hashes.SHA256().digest_size,"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:36",
+            "snippet": "return private_key.sign(message, pss(), hashes.SHA256())"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:41",
+            "snippet": "public_key.verify(signature, message, pss(), hashes.SHA256())"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:1",
+            "snippet": "\"\"\"X25519 key agreement followed by HKDF-SHA-256 key derivation.\"\"\""
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:16",
+            "snippet": "algorithm=hashes.SHA256(),"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "name": "RSA-2048",
+          "primitive": "signature",
+          "parameterSetIdentifier": "2048",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:16",
+            "snippet": "KeyPairGenerator generator = KeyPairGenerator.getInstance(\"RSA\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:26",
+            "snippet": "Cipher cipher = Cipher.getInstance(\"RSA/ECB/OAEPPadding\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:32",
+            "snippet": "Cipher cipher = Cipher.getInstance(\"RSA/ECB/OAEPPadding\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:61",
+            "snippet": "CryptoSupport.require(Arrays.equals(message, decrypt(keys.getPrivate(), ciphertext)), \"RSA-OAEP failed\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/RsaOaepPssExample.java:63",
+            "snippet": "CryptoSupport.require(verify(keys.getPublic(), message, signature), \"RSA-PSS failed\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/TestCrypto.java:35",
+            "snippet": "byte[] rsaMsg = \"rsa message\".getBytes(StandardCharsets.UTF_8);"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:1",
+            "snippet": "\"\"\"RSA-3072 OAEP encryption and RSA-PSS signatures using SHA-256.\"\"\""
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:5",
+            "snippet": "from cryptography.hazmat.primitives.asymmetric import padding, rsa"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:8",
+            "snippet": "def generate_private_key() -> rsa.RSAPrivateKey:"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:9",
+            "snippet": "return rsa.generate_private_key(public_exponent=65537, key_size=3072)"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:27",
+            "snippet": "def encrypt(public_key: rsa.RSAPublicKey, plaintext: bytes) -> bytes:"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:31",
+            "snippet": "def decrypt(private_key: rsa.RSAPrivateKey, ciphertext: bytes) -> bytes:"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:35",
+            "snippet": "def sign(private_key: rsa.RSAPrivateKey, message: bytes) -> bytes:"
+          },
+          {
+            "location": "python/rsa_oaep_pss_example.py:39",
+            "snippet": "def verify(public_key: rsa.RSAPublicKey, message: bytes, signature: bytes) -> bool:"
+          },
+          {
+            "location": "python/run_all.py:10",
+            "snippet": "from rsa_oaep_pss_example import main as rsa"
+          },
+          {
+            "location": "python/run_all.py:15",
+            "snippet": "for example in (hashing, hmac, pbkdf2, aes_gcm, rsa, ed25519, x25519, aes_key_wrap, private_key_serialisation):"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "ECDH-X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "name": "ECDH-X25519",
+          "primitive": "key-agreement",
+          "parameterSetIdentifier": "25519",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "java/src/main/java/org/example/crypto/X25519HkdfExample.java:17",
+            "snippet": "return KeyPairGenerator.getInstance(\"X25519\").generateKeyPair();"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/X25519HkdfExample.java:21",
+            "snippet": "KeyAgreement agreement = KeyAgreement.getInstance(\"X25519\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/X25519HkdfExample.java:30",
+            "snippet": "throw new IllegalArgumentException(\"IKM must be 32 bytes for X25519.\");"
+          },
+          {
+            "location": "java/src/main/java/org/example/crypto/X25519HkdfExample.java:60",
+            "snippet": "CryptoSupport.require(CryptoSupport.constantTimeEquals(aliceSecret, bobSecret), \"X25519 mismatch\");"
+          },
+          {
+            "location": "python/run_all.py:11",
+            "snippet": "from x25519_hkdf_example import main as x25519"
+          },
+          {
+            "location": "python/run_all.py:15",
+            "snippet": "for example in (hashing, hmac, pbkdf2, aes_gcm, rsa, ed25519, x25519, aes_key_wrap, private_key_serialisation):"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:1",
+            "snippet": "\"\"\"X25519 key agreement followed by HKDF-SHA-256 key derivation.\"\"\""
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:4",
+            "snippet": "from cryptography.hazmat.primitives.asymmetric import x25519"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:10",
+            "snippet": "def derive_key(private_key: x25519.X25519PrivateKey,"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:11",
+            "snippet": "peer_public_key: x25519.X25519PublicKey,"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:24",
+            "snippet": "alice = x25519.X25519PrivateKey.generate()"
+          },
+          {
+            "location": "python/x25519_hkdf_example.py:25",
+            "snippet": "bob = x25519.X25519PrivateKey.generate()"
+          }
+        ]
+      }
+    }
+  ]
+}
