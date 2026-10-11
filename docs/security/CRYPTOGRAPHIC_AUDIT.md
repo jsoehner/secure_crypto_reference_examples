@@ -8,7 +8,7 @@
 |---|---|---|
 | **Post-Quantum Ready (PQC)** | **0** | 🟢 Quantum-Resistant (NIST FIPS 203/204/205) |
 | **Quantum-Vulnerable (Backlog)** | **10** | 🔴 At Risk of 'Harvest Now, Decrypt Later' |
-| **Classical Symmetric / Hashing** | **42** | 🟡 Classical Security (Requires AES-256 / SHA-256+) |
+| **Classical Symmetric / Digest** | **42** | 🟡 Classical Security (Requires AES-256 / SHA-256+) |
 | **Asymmetric PQC Migration Progress** | **0.0%** | (0 of 10 asymmetric primitives migrated) |
 
 ### 🎯 Cryptographic Supply Chain Coverage & Confidence
@@ -17,9 +17,11 @@
 |---|---|---|
 | **First-Party Code (`src/`)** | **100% Audited** (0 Custom Primitives) | 🟢 **HIGH** (Direct AST & SAST verified clean) |
 | **Third-Party Supply Chain** | **0.0%** (0 of 16 dependencies cataloged) | 🔴 LOW (Known profiles assimilated) |
-| **Overall Audit Confidence Score** | **5.9%** | **🔴 LOW** (16 unassimilated supply chain dependencies) |
+| **Overall Audit Confidence Score** | **5.9%** | 🔴 LOW (16 unassimilated supply chain dependencies) |
 
-### ✅ Post-Quantum Cryptography Migrated Assets
+| **System OS Inventory** | **Pending Update** | 🟡 **Warning** (Local OS crypto components not yet inventoried) |
+
+### ✅ Post-Quantum Ready Assets
 
 > ⚠️ **No Post-Quantum Ready assets detected.** Immediate migration planning recommended for asymmetric key exchanges and digital signatures.
 
@@ -42,47 +44,47 @@
 
 | Component Name | Primitive | Key Length | Quantum Resistance Assessment | Provenance / Location(s) |
 |---|---|---|---|---|
-| `password@f5ad536c-c89a-45d5-bbb0-87c990aa5621` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `password@646e25dc-9552-4bf5-88f5-2d4be10034fa` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `secret-key@c989fa51-f563-4545-b894-ebafa31774ed` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/HmacExample.java` |
+| `salt@026d43a6-ae33-4eab-802e-85eec440addd` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
 | `AES-128` | other | 128 | Legacy bit-length (Recommend 256-bit upgrade) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java`<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java` |
-| `secret-key@cc30685a-4e4b-461c-8ca0-354468002172` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `password@9289590c-210d-4ccb-aadf-973cb13714f2` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
+| `password@3287f150-6f18-4f61-b89f-4746e4e03bcf` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
 | `PBKDF2-HMAC-SHA-256` | kdf | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java`<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `secret-key@688abe03-2e87-4a05-afcf-cab32ab20952` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `password@e0ba5159-f161-4503-a70c-61cd50c2c921` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
+| `password@30de1f76-9598-4abf-a925-1c9c39b5d696` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `password@5d12d207-bbbd-4ee8-b099-c650a1378a31` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
 | `AES-128-GCM` | ae | 128 | Legacy bit-length (Recommend 256-bit upgrade) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesGcmExample.java`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java` |
-| `secret-key@e90a003c-2a66-47d5-9f0c-43301a649f76` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesGcmExample.java` |
-| `password@dda7782e-4c26-4719-9689-627f4e71e5f7` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `secret-key@58c54a1b-b7e7-4107-88eb-7a9d46983d03` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
-| `password@e6e0590d-a9d3-4e88-8532-36c1a4dc9987` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `password@96aee5c8-ca9d-4437-b328-69cfa7df25fb` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
-| `password@800a454e-f609-4150-aa2d-5ef380ae1789` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `key@bbba57d0-3d37-45a4-ae77-0d79a1295e58` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
+| `secret-key@686270bf-4213-494e-b866-8fd6300bf859` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesGcmExample.java` |
+| `password@1be7ada7-9ed0-4d3a-a185-79ae3b19b8b7` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
+| `secret-key@7d885377-e382-4461-8367-c69031328614` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java` |
+| `password@c66f9595-28be-4305-8d96-7de11fc256ce` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
 | `MGF1` | other | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
-| `password@738d7e2c-b8ea-4f56-8ae3-11777cd93f68` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
+| `secret-key@c58fd024-e0d2-4a7a-9580-c0a9ecb69129` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
 | `HMAC-SHA-256` | mac | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/HmacExample.java`<br>`java/src/main/java/org/example/crypto/HmacExample.java`<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java`<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
-| `key@b98b65f9-bccc-43dc-bb44-7adaa1c04a5d` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
-| `salt@30a3d45e-7f7a-4fc6-aa20-ec12d53c0929` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
-| `password@4dfaea26-9764-40fc-8a0e-308abd43a1e8` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `salt@e786ab42-2600-464d-8fe3-325b0be52414` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
-| `secret-key@ba03a6f0-53ae-450a-abdf-622c3bfa3aaa` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/HmacExample.java` |
-| `key@0b30c467-6727-42ba-9ed6-679c0465e25e` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
+| `secret-key@a378ff9d-0667-4697-b7d7-023e35fb5906` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
+| `key@dcd3f8fd-7e19-4b40-a683-fdb22395f904` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
+| `password@3f99c76f-a312-4627-84cf-f717ede57ae0` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
+| `key@a78a309e-e39e-4879-98d4-ed5449981791` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Ed25519Example.java` |
 | `AES-256` | block-cipher | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java`<br>`python/aes_gcm_example.py:1`<br>`python/aes_gcm_example.py:5`<br>`python/aes_gcm_example.py:17`<br>`python/aes_gcm_example.py:22`<br>`python/aes_gcm_example.py:26`<br>`python/x25519_hkdf_example.py:27`<br>`python/aes_key_wrap_example.py:1`<br>`python/run_all.py:3`<br>`python/run_all.py:15`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java:62`<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java:13`<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java:27`<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java:35`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java:21`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java:28`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java:38`<br>`java/src/main/java/org/example/crypto/AesGcmExample.java:49` |
-| `password@bb758aeb-2b4e-4d0c-bb75-a91276263849` | unknown | N/A | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `password@beff34ef-62e7-4057-b2b8-650c1945fb22` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
-| `secret-key@2949826c-7241-49ba-9fb9-8d2b443e4874` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
-| `key@b2fb50e1-868c-436d-94e0-a9e1fa8caae1` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Ed25519Example.java` |
+| `secret-key@ca99b6fb-9041-4d51-8362-424882840666` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `password@aa59edc7-b896-4edd-a483-7ccebe5e3762` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
+| `password@9ac7f165-2ada-4cc1-91ce-36be625d16b3` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/TestCrypto.java` |
 | `SHA-256` | hash | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/HashingExample.java`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java`<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java`<br>`java/src/main/java/org/example/crypto/HmacExample.java`<br>`java/src/main/java/org/example/crypto/HmacExample.java`<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java`<br>`java/src/main/java/org/example/crypto/Pbkdf2Example.java` |
-| `secret-key@00396d37-724a-4751-92f0-4de1ac85b67e` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/AesKeyWrapExample.java` |
-| `secret-key@d223a2e7-4905-4577-bfc8-d728f7996dbd` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/X25519HkdfExample.java` |
+| `salt@7a2da16d-b97f-4d02-a49d-efb4c9416be8` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java` |
 | `SHA-512` | hash | 512 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`java/src/main/java/org/example/crypto/Ed25519Example.java`<br>`java/src/main/java/org/example/crypto/Ed25519Example.java`<br>`java/src/main/java/org/example/crypto/Ed25519Example.java` |
 | `AES-256-GCM` | ae | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`python/aes_gcm_example.py` |
-| `private-key@c14ead62-4efa-4843-adb9-e96b15894c54` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/ed25519_example.py` |
+| `private-key@94c76543-10e4-4aad-9e1a-dff5d4c7651c` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/test_crypto.py` |
+| `secret-key@6d461fb9-5f51-43a6-8c9d-95689997b33c` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/aes_gcm_example.py` |
 | `AES-128` | other | 128 | Legacy bit-length (Recommend 256-bit upgrade) | First-Party Code (SAST/AST)<br>`python/aes_key_wrap_example.py` |
 | `HMAC-SHA-256` | mac | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/hmac_example.py`<br>`python/hmac_example.py` |
 | `HKDF-SHA-256` | kdf | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`python/x25519_hkdf_example.py` |
-| `private-key@d827b916-3acf-49a7-9701-6a5d24778c3f` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/test_crypto.py` |
 | `PBKDF2-SHA-256` | kdf | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`python/pbkdf2_example.py` |
-| `private-key@43b3bd7f-7b70-492e-94d3-bebdb5c07fea` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/private_key_serialisation_example.py` |
+| `private-key@cb7f1728-318b-469a-a9a9-a3b06eb85dfa` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/private_key_serialisation_example.py` |
+| `private-key@b2dc4be5-9712-4780-981c-6b7598e7af8f` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/ed25519_example.py` |
 | `SHA-256` | hash | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`python/hashing_example.py`<br>`python/x25519_hkdf_example.py`<br>`python/hmac_example.py`<br>`python/hmac_example.py`<br>`python/pbkdf2_example.py`<br>`python/rsa_oaep_pss_example.py:1`<br>`python/rsa_oaep_pss_example.py:14`<br>`python/rsa_oaep_pss_example.py:15`<br>`python/rsa_oaep_pss_example.py:22`<br>`python/rsa_oaep_pss_example.py:23`<br>`python/rsa_oaep_pss_example.py:36`<br>`python/rsa_oaep_pss_example.py:41`<br>`python/hashing_example.py:1`<br>`python/hashing_example.py:6`<br>`python/hashing_example.py:7`<br>`python/x25519_hkdf_example.py:1`<br>`python/x25519_hkdf_example.py:16`<br>`python/hmac_example.py:1`<br>`python/hmac_example.py:10`<br>`python/hmac_example.py:16`<br>`python/pbkdf2_example.py:1`<br>`python/pbkdf2_example.py:22`<br>`java/src/main/java/org/example/crypto/HashingExample.java:9`<br>`java/src/main/java/org/example/crypto/HashingExample.java:10`<br>`java/src/main/java/org/example/crypto/HashingExample.java:14`<br>`java/src/main/java/org/example/crypto/HashingExample.java:15`<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java:22`<br>`java/src/main/java/org/example/crypto/RsaOaepPssExample.java:38`<br>`java/src/main/java/org/example/crypto/TestCrypto.java:10` |
-| `private-key@5092db69-d062-43aa-a682-42b71bf49e28` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/rsa_oaep_pss_example.py` |
-| `secret-key@c45bce19-e165-4d95-9600-3129e5dc15b9` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/aes_gcm_example.py` |
+| `private-key@0266a486-7eda-453f-baff-7b7b6d43b779` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python/rsa_oaep_pss_example.py` |
 | `SHA-512` | hash | 512 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`python/ed25519_example.py`<br>`python/private_key_serialisation_example.py`<br>`python/test_crypto.py` |
 
 ### ⚠️ Unassimilated Third-Party Binaries & Cryptographic Blind Spots
@@ -105,5 +107,5 @@
 | `gitleaks/gitleaks-action` | v3 | `pkg:github/gitleaks/gitleaks-action@v3` | 🟡 Unassimilated (No upstream CBOM) |
 | `semgrep/semgrep-action` | v1 | `pkg:github/semgrep/semgrep-action@v1` | 🟡 Unassimilated (No upstream CBOM) |
 | `/home/runner/work/secure_crypto_reference_examples/secure_crypto_reference_examples/.github/workflows/adr-gatekeeper.yml` | N/A | `N/A` | 🟡 Unassimilated (No upstream CBOM) |
-| `/home/runner/work/secure_crypto_reference_examples/secure_crypto_reference_examples/.github/workflows/sbom.yml` | N/A | `N/A` | 🟡 Unassimilated (No upstream CBOM) |
+| `/home/runner/work/secure_crypto_reference_examples/secure_crypto_reference_examples/.github/workflows/sbom-cbom.yml` | N/A | `N/A` | 🟡 Unassimilated (No upstream CBOM) |
 | *... and 1 more unassimilated dependencies* | | | |
