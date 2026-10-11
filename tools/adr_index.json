@@ -39,6 +39,11 @@
       "id": "008",
       "title": "Key Wrapping and Serialization",
       "file": "ADRs/008-key-wrapping-and-serialization.md"
+    },
+    {
+      "id": "009",
+      "title": "Automated SBOM & CBOM Supply Chain Governance",
+      "file": "ADRs/009-automated-sbom-cbom-supply-chain-governance.md"
     }
   ]
 }

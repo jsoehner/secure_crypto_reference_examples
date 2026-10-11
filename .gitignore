@@ -5,3 +5,4 @@ __pycache__/
 piolium/*
 !piolium/final-audit-report.md
 !piolium/findings/
+oss/
